@@ -1,0 +1,1499 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="IRONVAULT FITNESS — premium gym equipment for home and commercial training spaces."
+    />
+    <title>IRONVAULT FITNESS — Built for Performance</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --ink: #111210;
+        --panel: #1b1c19;
+        --muted: #a6a69f;
+        --paper: #f3f2ed;
+        --orange: #ff642d;
+        --line: rgba(255, 255, 255, 0.12);
+        --white: #fff;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        background: var(--ink);
+        color: var(--white);
+        font-family: "DM Sans", sans-serif;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      button,
+      input,
+      select,
+      textarea {
+        font: inherit;
+      }
+      button {
+        cursor: pointer;
+      }
+      .wrap {
+        width: min(1180px, calc(100% - 44px));
+        margin: auto;
+      }
+      .topline {
+        background: var(--orange);
+        color: #151515;
+        text-align: center;
+        padding: 9px 16px;
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+      }
+      .header {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        background: rgba(17, 18, 16, 0.94);
+        backdrop-filter: blur(14px);
+        border-bottom: 1px solid var(--line);
+      }
+      .nav {
+        height: 78px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 28px;
+      }
+      .logo {
+        font-family: "Barlow Condensed";
+        font-size: 29px;
+        font-weight: 900;
+        letter-spacing: 1px;
+        line-height: 0.85;
+      }
+      .logo span {
+        color: var(--orange);
+      }
+      .logo small {
+        display: block;
+        font: 700 8px "DM Sans";
+        letter-spacing: 3.3px;
+        color: #aaa;
+        margin-top: 7px;
+      }
+      .links {
+        display: flex;
+        gap: 30px;
+        align-items: center;
+      }
+      .links a {
+        font-size: 12px;
+        color: #d0d0ca;
+        font-weight: 600;
+        transition: 0.2s;
+      }
+      .links a:hover {
+        color: var(--orange);
+      }
+      .nav-actions {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+      }
+      .icon-btn {
+        border: 1px solid var(--line);
+        background: transparent;
+        color: white;
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        position: relative;
+      }
+      .count {
+        position: absolute;
+        right: -4px;
+        top: -4px;
+        background: var(--orange);
+        color: #111;
+        border-radius: 50%;
+        width: 17px;
+        height: 17px;
+        font-size: 10px;
+        font-weight: 800;
+        display: grid;
+        place-items: center;
+      }
+      .menu-btn {
+        display: none;
+      }
+      .btn {
+        border: 0;
+        background: var(--orange);
+        color: #111;
+        padding: 15px 22px;
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 1.2px;
+        text-transform: uppercase;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        transition: 0.2s;
+      }
+      .btn:hover {
+        background: #ff8053;
+        transform: translateY(-2px);
+      }
+      .btn.outline {
+        background: transparent;
+        color: white;
+        border: 1px solid rgba(255, 255, 255, 0.45);
+      }
+      .btn.outline:hover {
+        border-color: var(--orange);
+        color: var(--orange);
+      }
+      .hero {
+        min-height: 650px;
+        display: flex;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+        background:
+          linear-gradient(
+            90deg,
+            rgba(12, 13, 12, 0.96) 0%,
+            rgba(12, 13, 12, 0.78) 44%,
+            rgba(12, 13, 12, 0.15) 100%
+          ),
+          url("https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=2000&q=88")
+            center/cover;
+      }
+      .hero:after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(0deg, var(--ink), transparent 24%);
+        pointer-events: none;
+      }
+      .hero-content {
+        position: relative;
+        z-index: 1;
+        max-width: 650px;
+        padding: 90px 0;
+      }
+      .eyebrow {
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 3px;
+        color: var(--orange);
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .eyebrow:before {
+        content: "";
+        width: 28px;
+        height: 2px;
+        background: var(--orange);
+      }
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+      h1,
+      h2,
+      .display {
+        font-family: "Barlow Condensed";
+        text-transform: uppercase;
+        line-height: 0.92;
+      }
+      h1 {
+        font-size: clamp(62px, 9vw, 112px);
+        margin: 22px 0 20px;
+        letter-spacing: -1px;
+      }
+      h1 em {
+        font-style: normal;
+        color: var(--orange);
+      }
+      .hero p {
+        max-width: 470px;
+        color: #c5c5be;
+        line-height: 1.8;
+        font-size: 14px;
+        margin-bottom: 30px;
+      }
+      .hero-cta {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      .hero-note {
+        display: flex;
+        gap: 34px;
+        margin-top: 54px;
+      }
+      .stat strong {
+        font-family: "Barlow Condensed";
+        font-size: 30px;
+        display: block;
+      }
+      .stat span {
+        font-size: 9px;
+        color: #aaa;
+        letter-spacing: 1.4px;
+        text-transform: uppercase;
+      }
+      .ticker {
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+        padding: 19px 0;
+        overflow: hidden;
+        white-space: nowrap;
+        color: #b9b9b2;
+        font-family: "Barlow Condensed";
+        font-size: 18px;
+        font-weight: 700;
+        letter-spacing: 2px;
+      }
+      .ticker span {
+        margin: 0 34px;
+      }
+      .ticker b {
+        color: var(--orange);
+        font-size: 14px;
+      }
+      .section {
+        padding: 100px 0;
+      }
+      .section.light {
+        background: var(--paper);
+        color: #171815;
+      }
+      .section-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        gap: 24px;
+        margin-bottom: 38px;
+      }
+      .section h2 {
+        font-size: clamp(42px, 6vw, 66px);
+        margin: 13px 0 0;
+      }
+      .section-head p {
+        color: #777;
+        max-width: 340px;
+        font-size: 13px;
+        line-height: 1.7;
+        margin: 0;
+      }
+      .filters {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-bottom: 26px;
+      }
+      .filter {
+        padding: 10px 16px;
+        border: 1px solid #d8d7d0;
+        background: transparent;
+        color: #333;
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
+      .filter.active,
+      .filter:hover {
+        background: #171815;
+        color: white;
+        border-color: #171815;
+      }
+      .products {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 18px;
+      }
+      .product {
+        background: #fff;
+        position: relative;
+        overflow: hidden;
+      }
+      .product-img {
+        height: 230px;
+        background: #e7e6df;
+        overflow: hidden;
+        position: relative;
+      }
+      .product-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: 0.45s;
+      }
+      .product:hover img {
+        transform: scale(1.06);
+      }
+      .tag {
+        position: absolute;
+        top: 13px;
+        left: 13px;
+        background: var(--orange);
+        padding: 6px 9px;
+        color: #111;
+        font-size: 9px;
+        font-weight: 900;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
+      .product-info {
+        padding: 18px;
+      }
+      .product-type {
+        font-size: 9px;
+        color: #898981;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        font-weight: 800;
+      }
+      .product h3 {
+        font-family: "Barlow Condensed";
+        font-size: 23px;
+        text-transform: uppercase;
+        margin: 8px 0;
+      }
+      .product-bottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 16px;
+      }
+      .price {
+        font-size: 15px;
+        font-weight: 800;
+        color: #171815;
+      }
+      .add {
+        background: #171815;
+        color: white;
+        border: 0;
+        width: 38px;
+        height: 38px;
+        font-size: 20px;
+      }
+      .add:hover {
+        background: var(--orange);
+        color: #111;
+      }
+      .view-all {
+        margin-top: 34px;
+        text-align: center;
+      }
+      .split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 70px;
+        align-items: center;
+      }
+      .feature-photo {
+        height: 540px;
+        position: relative;
+        background: #292a26;
+      }
+      .feature-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .photo-stamp {
+        position: absolute;
+        bottom: 22px;
+        right: -20px;
+        background: var(--orange);
+        color: #111;
+        padding: 22px 26px;
+        font-family: "Barlow Condensed";
+        font-weight: 900;
+        font-size: 24px;
+        text-transform: uppercase;
+      }
+      .copy p {
+        color: #aaa;
+        line-height: 1.85;
+        font-size: 13px;
+      }
+      .copy .section h2 {
+        margin-bottom: 25px;
+      }
+      .checks {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+        margin: 28px 0;
+      }
+      .check {
+        display: flex;
+        gap: 10px;
+        font-size: 12px;
+        font-weight: 700;
+        align-items: center;
+      }
+      .check i {
+        font-style: normal;
+        color: var(--orange);
+        font-size: 18px;
+      }
+      .service-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+        margin-top: 40px;
+      }
+      .service {
+        border: 1px solid var(--line);
+        padding: 30px;
+        min-height: 230px;
+        background: linear-gradient(145deg, #20211e, #151613);
+      }
+      .service .num {
+        font-family: "Barlow Condensed";
+        font-size: 14px;
+        color: var(--orange);
+        letter-spacing: 2px;
+      }
+      .service h3 {
+        font-family: "Barlow Condensed";
+        font-size: 27px;
+        text-transform: uppercase;
+        margin: 28px 0 10px;
+      }
+      .service p {
+        font-size: 12px;
+        color: #aaa;
+        line-height: 1.8;
+        margin: 0;
+      }
+      .banner {
+        padding: 75px 0;
+        background:
+          linear-gradient(
+            90deg,
+            rgba(255, 100, 45, 0.96),
+            rgba(255, 100, 45, 0.86)
+          ),
+          url("https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=1600&q=80")
+            center/cover;
+        color: #111;
+      }
+      .banner-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 30px;
+      }
+      .banner h2 {
+        font-size: clamp(40px, 6vw, 65px);
+        margin: 0;
+      }
+      .banner p {
+        font-size: 13px;
+        max-width: 440px;
+        line-height: 1.7;
+        margin: 12px 0 0;
+      }
+      .btn.dark {
+        background: #111;
+        color: #fff;
+      }
+      .testimonials {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+      }
+      .quote {
+        background: #20211e;
+        padding: 28px;
+        border: 1px solid var(--line);
+      }
+      .stars {
+        color: var(--orange);
+        letter-spacing: 3px;
+        font-size: 13px;
+      }
+      .quote p {
+        font-size: 13px;
+        line-height: 1.8;
+        color: #c3c3bc;
+        margin: 20px 0 26px;
+      }
+      .person {
+        font-size: 11px;
+        font-weight: 800;
+      }
+      .person small {
+        display: block;
+        color: #92928b;
+        font-weight: 400;
+        margin-top: 4px;
+      }
+      .contact-grid {
+        display: grid;
+        grid-template-columns: 0.8fr 1.2fr;
+        gap: 70px;
+      }
+      .contact-info p {
+        font-size: 13px;
+        color: #aaa;
+        line-height: 1.8;
+      }
+      .contact-item {
+        margin-top: 25px;
+      }
+      .contact-item small {
+        display: block;
+        color: var(--orange);
+        font-size: 9px;
+        letter-spacing: 2px;
+        font-weight: 800;
+        margin-bottom: 7px;
+      }
+      .contact-item strong {
+        font-size: 13px;
+      }
+      .form {
+        background: #20211e;
+        padding: 32px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+      .field {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .field.full {
+        grid-column: 1/-1;
+      }
+      .field label {
+        font-size: 9px;
+        color: #aaa;
+        font-weight: 800;
+        letter-spacing: 1.4px;
+        text-transform: uppercase;
+      }
+      .field input,
+      .field select,
+      .field textarea {
+        background: #151613;
+        border: 1px solid #393a35;
+        color: white;
+        padding: 14px;
+        outline: none;
+        font-size: 12px;
+      }
+      .field input:focus,
+      .field textarea:focus,
+      .field select:focus {
+        border-color: var(--orange);
+      }
+      .field textarea {
+        min-height: 110px;
+        resize: vertical;
+      }
+      .form .btn {
+        grid-column: 1/-1;
+      }
+      .footer {
+        background: #0c0d0b;
+        border-top: 1px solid var(--line);
+        padding: 55px 0 25px;
+      }
+      .footer-top {
+        display: flex;
+        justify-content: space-between;
+        gap: 35px;
+        padding-bottom: 45px;
+      }
+      .footer p {
+        max-width: 300px;
+        color: #888;
+        font-size: 12px;
+        line-height: 1.8;
+        margin-top: 18px;
+      }
+      .footer-links {
+        display: flex;
+        gap: 55px;
+      }
+      .footer-links strong {
+        display: block;
+        font-size: 10px;
+        letter-spacing: 1.5px;
+        color: var(--orange);
+        margin-bottom: 18px;
+      }
+      .footer-links a {
+        display: block;
+        font-size: 11px;
+        color: #aaa;
+        margin: 12px 0;
+      }
+      .footer-bottom {
+        border-top: 1px solid var(--line);
+        padding-top: 20px;
+        display: flex;
+        justify-content: space-between;
+        color: #777;
+        font-size: 10px;
+      }
+      .overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.65);
+        z-index: 40;
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.25s;
+      }
+      .overlay.open {
+        opacity: 1;
+        visibility: visible;
+      }
+      .cart {
+        position: fixed;
+        right: 0;
+        top: 0;
+        height: 100%;
+        width: min(420px, 100%);
+        background: #f3f2ed;
+        color: #171815;
+        z-index: 41;
+        padding: 28px;
+        transform: translateX(100%);
+        transition: 0.3s;
+        display: flex;
+        flex-direction: column;
+      }
+      .cart.open {
+        transform: translateX(0);
+      }
+      .cart-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 18px;
+      }
+      .cart-head h3 {
+        font-family: "Barlow Condensed";
+        font-size: 30px;
+        text-transform: uppercase;
+        margin: 0;
+      }
+      .close {
+        border: 0;
+        background: transparent;
+        font-size: 25px;
+      }
+      .cart-items {
+        flex: 1;
+        overflow: auto;
+        padding: 12px 0;
+      }
+      .cart-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 15px 0;
+        border-bottom: 1px solid #ddd;
+        font-size: 12px;
+      }
+      .cart-row strong {
+        display: block;
+        margin-bottom: 5px;
+      }
+      .qty {
+        display: flex;
+        gap: 9px;
+        align-items: center;
+        margin-top: 8px;
+      }
+      .qty button {
+        border: 1px solid #ccc;
+        background: transparent;
+        width: 23px;
+        height: 23px;
+      }
+      .cart-total {
+        border-top: 1px solid #ccc;
+        padding-top: 18px;
+      }
+      .cart-total div {
+        display: flex;
+        justify-content: space-between;
+        font-weight: 800;
+        margin-bottom: 16px;
+      }
+      .empty {
+        text-align: center;
+        color: #777;
+        font-size: 13px;
+        padding: 55px 0;
+      }
+      .toast {
+        position: fixed;
+        bottom: 24px;
+        left: 50%;
+        transform: translate(-50%, 20px);
+        background: var(--orange);
+        color: #111;
+        padding: 13px 20px;
+        font-size: 11px;
+        font-weight: 800;
+        z-index: 60;
+        opacity: 0;
+        transition: 0.25s;
+        pointer-events: none;
+      }
+      .toast.show {
+        opacity: 1;
+        transform: translate(-50%, 0);
+      }
+      .mobile-nav {
+        display: none;
+      }
+      @media (max-width: 900px) {
+        .links {
+          gap: 16px;
+        }
+        .links a {
+          font-size: 11px;
+        }
+        .products {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .split {
+          gap: 35px;
+        }
+        .contact-grid {
+          gap: 35px;
+        }
+        .service-grid,
+        .testimonials {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      @media (max-width: 680px) {
+        .wrap {
+          width: min(100% - 32px, 1180px);
+        }
+        .nav {
+          height: 68px;
+        }
+        .links {
+          display: none;
+        }
+        .menu-btn {
+          display: block;
+        }
+        .nav-actions .btn {
+          display: none;
+        }
+        .hero {
+          min-height: 620px;
+          background-position: 58% center;
+        }
+        .hero-content {
+          padding: 75px 0;
+        }
+        .hero-note {
+          gap: 20px;
+        }
+        .section {
+          padding: 72px 0;
+        }
+        .section-head {
+          display: block;
+        }
+        .section-head p {
+          margin-top: 18px;
+        }
+        .products {
+          gap: 10px;
+        }
+        .product-img {
+          height: 165px;
+        }
+        .product-info {
+          padding: 13px;
+        }
+        .product h3 {
+          font-size: 19px;
+        }
+        .product-bottom {
+          margin-top: 12px;
+        }
+        .price {
+          font-size: 13px;
+        }
+        .split,
+        .contact-grid {
+          grid-template-columns: 1fr;
+        }
+        .feature-photo {
+          height: 380px;
+        }
+        .photo-stamp {
+          right: 0;
+        }
+        .service-grid,
+        .testimonials {
+          grid-template-columns: 1fr;
+        }
+        .banner-inner {
+          display: block;
+        }
+        .banner .btn {
+          margin-top: 25px;
+        }
+        .form {
+          grid-template-columns: 1fr;
+          padding: 22px;
+        }
+        .field.full,
+        .form .btn {
+          grid-column: auto;
+        }
+        .footer-top {
+          display: block;
+        }
+        .footer-links {
+          margin-top: 30px;
+          gap: 35px;
+        }
+        .footer-bottom {
+          gap: 15px;
+          flex-direction: column;
+        }
+        .mobile-nav {
+          display: flex;
+          position: fixed;
+          inset: 0 0 0 auto;
+          width: min(320px, 85vw);
+          height: 100vh;
+          background: #171815;
+          z-index: 35;
+          transform: translateX(100%);
+          transition: 0.3s;
+          padding: 90px 30px 30px;
+          flex-direction: column;
+          gap: 24px;
+        }
+        .mobile-nav.open {
+          transform: translateX(0);
+        }
+        .mobile-nav a {
+          font-family: "Barlow Condensed";
+          font-size: 27px;
+          text-transform: uppercase;
+        }
+        .mobile-nav .close {
+          position: absolute;
+          right: 25px;
+          top: 25px;
+          color: white;
+        }
+        .checks {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="topline">
+      Free shipping on orders over ₹10,000 · Built for the work you put in
+    </div>
+    <header class="header">
+      <div class="wrap nav">
+        <a class="logo" href="#home"
+          >IRON<span>VAULT</span><small>FITNESS EQUIPMENT</small></a
+        >
+        <nav class="links">
+          <a href="#home">Home</a><a href="#products">Products</a
+          ><a href="#services">Services</a><a href="#about">About</a
+          ><a href="#contact">Contact</a>
+        </nav>
+        <div class="nav-actions">
+          <button class="icon-btn" id="cartOpen" aria-label="Open cart">
+            ♧<span class="count" id="cartCount">0</span></button
+          ><a class="btn" href="#contact">Get a quote ↗</a
+          ><button
+            class="icon-btn menu-btn"
+            id="menuOpen"
+            aria-label="Open menu"
+          >
+            ☰
+          </button>
+        </div>
+      </div>
+    </header>
+    <nav class="mobile-nav" id="mobileNav">
+      <button class="close" id="menuClose">×</button><a href="#home">Home</a
+      ><a href="#products">Products</a><a href="#services">Services</a
+      ><a href="#about">About us</a><a href="#contact">Contact</a>
+    </nav>
+    <main>
+      <section class="hero" id="home">
+        <div class="wrap">
+          <div class="hero-content">
+            <div class="eyebrow">Engineered for every rep</div>
+            <h1>BUILD YOUR<br />STRONGER <em>SELF.</em></h1>
+            <p>
+              Professional-grade gym equipment for ambitious athletes, home
+              training spaces and commercial fitness facilities. Make every rep
+              count.
+            </p>
+            <div class="hero-cta">
+              <a class="btn" href="#products">Explore equipment ↗</a
+              ><a class="btn outline" href="#services">Build your gym</a>
+            </div>
+            <div class="hero-note">
+              <div class="stat"><strong>150+</strong><span>Products</span></div>
+              <div class="stat">
+                <strong>5 yr</strong><span>Warranty options</span>
+              </div>
+              <div class="stat">
+                <strong> pan-India</strong><span>Delivery support</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="ticker">
+        STRENGTH IS BUILT <b>✳</b><span>NOT GIVEN</span><b>✳</b
+        ><span>TRAIN WITH PURPOSE</span><b>✳</b
+        ><span>GEAR THAT WORKS AS HARD AS YOU</span><b>✳</b>
+      </div>
+      <section class="section light" id="products">
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <div class="eyebrow">Shop the collection</div>
+              <h2>GEAR UP. LEVEL UP.</h2>
+            </div>
+            <p>
+              From your first home setup to a fully equipped training floor,
+              find the essentials that move you forward.
+            </p>
+          </div>
+          <div class="filters">
+            <button class="filter active" data-filter="all">
+              All equipment</button
+            ><button class="filter" data-filter="strength">Strength</button
+            ><button class="filter" data-filter="weights">Free weights</button
+            ><button class="filter" data-filter="cardio">Cardio</button
+            ><button class="filter" data-filter="accessories">
+              Accessories
+            </button>
+          </div>
+          <div class="products" id="productGrid">
+            <article
+              class="product"
+              data-category="strength"
+              data-name="Olympic Power Rack"
+              data-price="34999"
+            >
+              <div class="product-img">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZh7hSOkzCKj2CPHCdLkpYd4P8MyEODHDl1eyQ5-xaFcHvAlsWuCB80xZI&s=10"
+                  alt="Power rack"
+                /><span class="tag">Bestseller</span>
+              </div>
+              <div class="product-info">
+                <div class="product-type">Strength · Racks</div>
+                <h3>Olympic Power Rack</h3>
+                <div class="product-bottom">
+                  <span class="price">₹34,999</span
+                  ><button class="add" aria-label="Add Olympic Power Rack">
+                    +
+                  </button>
+                </div>
+              </div>
+            </article>
+            <article
+              class="product"
+              data-category="weights"
+              data-name="Pro Rubber Dumbbell Set"
+              data-price="12999"
+            >
+              <div class="product-img">
+                <img
+                  src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=700&q=80"
+                  alt="Dumbbells"
+                /><span class="tag">Popular</span>
+              </div>
+              <div class="product-info">
+                <div class="product-type">Free weights · Dumbbells</div>
+                <h3>Pro Rubber Dumbbell Set</h3>
+                <div class="product-bottom">
+                  <span class="price">₹12,999</span
+                  ><button class="add" aria-label="Add Pro Rubber Dumbbell Set">
+                    +
+                  </button>
+                </div>
+              </div>
+            </article>
+            <article
+              class="product"
+              data-category="cardio"
+              data-name="Performance Spin Bike"
+              data-price="22999"
+            >
+              <div class="product-img">
+                <img
+                  src="https://metrosports.co.in/wp-content/uploads/2024/08/Aerofit-AF-196-Spin-Bike.png"
+                  alt="Indoor cycling bike"
+                />
+              </div>
+              <div class="product-info">
+                <div class="product-type">Cardio · Cycling</div>
+                <h3>Performance Spin Bike</h3>
+                <div class="product-bottom">
+                  <span class="price">₹22,999</span
+                  ><button class="add" aria-label="Add Performance Spin Bike">
+                    +
+                  </button>
+                </div>
+              </div>
+            </article>
+            <article
+              class="product"
+              data-category="accessories"
+              data-name="Training Essentials Kit"
+              data-price="2499"
+            >
+              <div class="product-img">
+                <img
+                  src="https://images.unsplash.com/photo-1599058945522-28d584b6f0ff?auto=format&fit=crop&w=700&q=80"
+                  alt="Training accessories"
+                /><span class="tag">Starter pick</span>
+              </div>
+              <div class="product-info">
+                <div class="product-type">Accessories · Training</div>
+                <h3>Training Essentials Kit</h3>
+                <div class="product-bottom">
+                  <span class="price">₹2,499</span
+                  ><button class="add" aria-label="Add Training Essentials Kit">
+                    +
+                  </button>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="view-all">
+            <a class="btn dark" href="#contact">Request full catalogue ↗</a>
+          </div>
+        </div>
+      </section>
+      <section class="section" id="about">
+        <div class="wrap split">
+          <div class="feature-photo">
+            <img
+              src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=1000&q=85"
+              alt="Athlete training with weights"
+            />
+            <div class="photo-stamp">Made for<br />the committed.</div>
+          </div>
+          <div class="copy">
+            <div class="eyebrow">The Ironvault standard</div>
+            <h2>MORE THAN<br />JUST EQUIPMENT.</h2>
+            <p>
+              We believe great training starts with gear you can trust.
+              IRONVAULT brings together dependable equipment, practical guidance
+              and thoughtful service to help people build better training
+              spaces.
+            </p>
+            <p>
+              Whether you're creating a compact home gym or planning a
+              commercial facility, our goal is simple: make choosing and setting
+              up the right equipment easier.
+            </p>
+            <div class="checks">
+              <div class="check"><i>✓</i> Quality-focused selection</div>
+              <div class="check"><i>✓</i> Setup guidance</div>
+              <div class="check"><i>✓</i> Product support</div>
+              <div class="check"><i>✓</i> Solutions for every space</div>
+            </div>
+            <a class="btn" href="#contact">Talk to our team ↗</a>
+          </div>
+        </div>
+      </section>
+      <section class="section" id="services" style="background: #151613">
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <div class="eyebrow">What we do</div>
+              <h2>YOUR SPACE. OUR EXPERTISE.</h2>
+            </div>
+            <p>
+              Practical support from choosing the right equipment to getting
+              your training space ready to perform.
+            </p>
+          </div>
+          <div class="service-grid">
+            <div class="service">
+              <div class="num">01 / CONSULT</div>
+              <h3>Gym Planning</h3>
+              <p>
+                Get help selecting equipment based on your space, training goals
+                and budget.
+              </p>
+            </div>
+            <div class="service">
+              <div class="num">02 / EQUIP</div>
+              <h3>Equipment Supply</h3>
+              <p>
+                Explore strength, cardio and functional training essentials for
+                home or commercial use.
+              </p>
+            </div>
+            <div class="service">
+              <div class="num">03 / INSTALL</div>
+              <h3>Setup & Support</h3>
+              <p>
+                Coordinate delivery, installation guidance and ongoing product
+                assistance.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="banner">
+        <div class="wrap banner-inner">
+          <div>
+            <h2>READY TO BUILD<br />YOUR TRAINING SPACE?</h2>
+            <p>
+              Tell us what you're building. We'll help you find the right
+              equipment for your goals and your budget.
+            </p>
+          </div>
+          <a class="btn dark" href="#contact">Start a conversation ↗</a>
+        </div>
+      </section>
+      <section class="section">
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <div class="eyebrow">Built on trust</div>
+              <h2>GOOD GEAR. GOOD WORDS.</h2>
+            </div>
+            <p>
+              Example testimonials for this demo concept. Replace these with
+              verified customer reviews before launch.
+            </p>
+          </div>
+          <div class="testimonials">
+            <div class="quote">
+              <div class="stars">★★★★★</div>
+              <p>
+                “The team helped us think through the equipment mix for our new
+                studio. The planning process felt straightforward.”
+              </p>
+              <div class="person">
+                Aarav M.<small>Studio owner · Demo testimonial</small>
+              </div>
+            </div>
+            <div class="quote">
+              <div class="stars">★★★★★</div>
+              <p>
+                “A clean range of essentials and clear product information made
+                comparing options much easier.”
+              </p>
+              <div class="person">
+                Neha R.<small>Home gym customer · Demo testimonial</small>
+              </div>
+            </div>
+            <div class="quote">
+              <div class="stars">★★★★★</div>
+              <p>
+                “We needed a practical setup for a compact space. The
+                consultation helped us prioritise what mattered.”
+              </p>
+              <div class="person">
+                Karan S.<small>Fitness enthusiast · Demo testimonial</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section" id="contact" style="background: #151613">
+        <div class="wrap contact-grid">
+          <div class="contact-info">
+            <div class="eyebrow">Let's get to work</div>
+            <h2>LET'S BUILD<br />SOMETHING STRONG.</h2>
+            <p>
+              Have a product question or planning a gym? Send us a message and
+              our team will get back to you.
+            </p>
+            <div class="contact-item">
+              <small>EMAIL</small
+              ><strong>hello@ironvaultfitness.example</strong>
+            </div>
+            <div class="contact-item">
+              <small>PHONE</small><strong>+91 90000 00000</strong>
+            </div>
+            <div class="contact-item">
+              <small>BUSINESS HOURS</small
+              ><strong>Mon – Sat · 9:30 AM – 6:30 PM</strong>
+            </div>
+            <p style="margin-top: 30px; font-size: 10px; color: #777">
+              Demo contact details — replace with your real business
+              information.
+            </p>
+          </div>
+          <form class="form" id="contactForm">
+            <div class="field">
+              <label for="name">Your name</label
+              ><input id="name" name="name" placeholder="Full name" required />
+            </div>
+            <div class="field">
+              <label for="email">Email address</label
+              ><input
+                id="email"
+                name="email"
+                type="email"
+                placeholder="you@example.com"
+                required
+              />
+            </div>
+            <div class="field">
+              <label for="phone">Phone number</label
+              ><input id="phone" name="phone" type="tel" placeholder="+91" />
+            </div>
+            <div class="field">
+              <label for="interest">I'm interested in</label
+              ><select id="interest" name="interest">
+                <option>Product enquiry</option>
+                <option>Home gym setup</option>
+                <option>Commercial gym setup</option>
+                <option>Bulk / wholesale order</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="field full">
+              <label for="message">Tell us about your requirement</label
+              ><textarea
+                id="message"
+                name="message"
+                placeholder="What kind of equipment or setup are you looking for?"
+              ></textarea>
+            </div>
+            <button class="btn" type="submit">Send enquiry ↗</button>
+            <div
+              id="formMessage"
+              class="field full"
+              style="display: none; color: var(--orange); font-size: 12px"
+            ></div>
+          </form>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="wrap">
+        <div class="footer-top">
+          <div>
+            <a class="logo" href="#home"
+              >IRON<span>VAULT</span><small>FITNESS EQUIPMENT</small></a
+            >
+            <p>
+              Equipment for stronger training spaces. Built around performance,
+              reliability and the people who put in the work.
+            </p>
+          </div>
+          <div class="footer-links">
+            <div>
+              <strong>EXPLORE</strong><a href="#products">Products</a
+              ><a href="#services">Services</a><a href="#about">Our story</a>
+            </div>
+            <div>
+              <strong>SUPPORT</strong><a href="#contact">Contact</a
+              ><a href="#contact">Get a quote</a
+              ><a href="#contact">Product help</a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>© 2026 IRONVAULT FITNESS. DEMO WEBSITE.</span
+          ><span>Instagram · Facebook · YouTube</span>
+        </div>
+      </div>
+    </footer>
+    <div class="overlay" id="overlay"></div>
+    <aside class="cart" id="cart">
+      <div class="cart-head">
+        <h3>Your bag</h3>
+        <button class="close" id="cartClose" aria-label="Close cart">×</button>
+      </div>
+      <div class="cart-items" id="cartItems">
+        <div class="empty">Your bag is currently empty.</div>
+      </div>
+      <div class="cart-total">
+        <div><span>Subtotal</span><span id="cartTotal">₹0</span></div>
+        <button class="btn dark" style="width: 100%" id="checkout">
+          Enquire about these items ↗
+        </button>
+        <p
+          style="
+            font-size: 10px;
+            color: #777;
+            line-height: 1.6;
+            margin: 12px 0 0;
+          "
+        >
+          Demo cart only. No payment is collected on this website.
+        </p>
+      </div>
+    </aside>
+    <div class="toast" id="toast">Added to your bag</div>
+    <script>
+      const products = [...document.querySelectorAll(".product")].map((el) => ({
+        name: el.dataset.name,
+        price: Number(el.dataset.price),
+      }));
+      let cartItems = [];
+      const $ = (s) => document.querySelector(s);
+      const fmt = (n) => "₹" + n.toLocaleString("en-IN");
+      function updateCart() {
+        $("#cartCount").textContent = cartItems.reduce((a, b) => a + b.qty, 0);
+        $("#cartTotal").textContent = fmt(
+          cartItems.reduce((a, b) => a + b.price * b.qty, 0),
+        );
+        const box = $("#cartItems");
+        if (!cartItems.length) {
+          box.innerHTML =
+            '<div class="empty">Your bag is currently empty.</div>';
+          return;
+        }
+        box.innerHTML = cartItems
+          .map(
+            (p, i) =>
+              `<div class="cart-row"><div><strong>${p.name}</strong>${fmt(p.price)}<div class="qty"><button data-action="minus" data-i="${i}">−</button><span>${p.qty}</span><button data-action="plus" data-i="${i}">+</button></div></div><button class="close" data-action="remove" data-i="${i}" aria-label="Remove item">×</button></div>`,
+          )
+          .join("");
+      }
+      function showToast(msg) {
+        const t = $("#toast");
+        t.textContent = msg;
+        t.classList.add("show");
+        setTimeout(() => t.classList.remove("show"), 1800);
+      }
+      document.querySelectorAll(".add").forEach((btn, i) =>
+        btn.addEventListener("click", () => {
+          const p = products[i],
+            found = cartItems.find((x) => x.name === p.name);
+          found ? found.qty++ : cartItems.push({ ...p, qty: 1 });
+          updateCart();
+          showToast(p.name + " added to bag");
+        }),
+      );
+      $("#cartItems").addEventListener("click", (e) => {
+        const b = e.target.closest("button[data-action]");
+        if (!b) return;
+        const i = +b.dataset.i,
+          a = b.dataset.action;
+        if (a === "plus") cartItems[i].qty++;
+        if (a === "minus") {
+          cartItems[i].qty--;
+          if (cartItems[i].qty <= 0) cartItems.splice(i, 1);
+        }
+        if (a === "remove") cartItems.splice(i, 1);
+        updateCart();
+      });
+      function openCart() {
+        $("#cart").classList.add("open");
+        $("#overlay").classList.add("open");
+      }
+      function closeCart() {
+        $("#cart").classList.remove("open");
+        $("#overlay").classList.remove("open");
+      }
+      $("#cartOpen").onclick = openCart;
+      $("#cartClose").onclick = closeCart;
+      $("#overlay").onclick = closeCart;
+      $("#checkout").onclick = () => {
+        if (!cartItems.length) {
+          showToast("Add a product to your bag first");
+          return;
+        }
+        const summary = cartItems.map((p) => `${p.name} × ${p.qty}`).join(", ");
+        $("#message").value =
+          "I am interested in: " + summary + ". Please share more details.";
+        $("#interest").value = "Product enquiry";
+        closeCart();
+        $("#contact").scrollIntoView({ behavior: "smooth" });
+        showToast("Items added to your enquiry");
+      };
+      document.querySelectorAll(".filter").forEach((b) =>
+        b.addEventListener("click", () => {
+          document
+            .querySelectorAll(".filter")
+            .forEach((x) => x.classList.remove("active"));
+          b.classList.add("active");
+          document
+            .querySelectorAll(".product")
+            .forEach(
+              (p) =>
+                (p.style.display =
+                  b.dataset.filter === "all" ||
+                  p.dataset.category === b.dataset.filter
+                    ? "block"
+                    : "none"),
+            );
+        }),
+      );
+      $("#contactForm").addEventListener("submit", (e) => {
+        e.preventDefault();
+        const name = $("#name").value.trim();
+        $("#formMessage").style.display = "block";
+        $("#formMessage").textContent =
+          `Thanks, ${name}. This demo form is working locally; connect it to your email or CRM to receive real enquiries.`;
+        e.target.reset();
+      });
+      $("#menuOpen").onclick = () => {
+        $("#mobileNav").classList.add("open");
+        $("#overlay").classList.add("open");
+      };
+      $("#menuClose").onclick = () => {
+        $("#mobileNav").classList.remove("open");
+        $("#overlay").classList.remove("open");
+      };
+      document.querySelectorAll(".mobile-nav a").forEach((a) =>
+        a.addEventListener("click", () => {
+          $("#mobileNav").classList.remove("open");
+          $("#overlay").classList.remove("open");
+        }),
+      );
+    </script>
+  </body>
+</html>
